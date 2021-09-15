@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 13:02:46 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/15 13:02:46 by marvin           ###   ########.fr       */
+/*   Created: 2021/09/15 14:33:19 by marvin            #+#    #+#             */
+/*   Updated: 2021/09/15 14:33:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	a;
-	unsigned int	b;
+	int			i;
+	const char	*last;
 
-	if (size <= ft_strlen(dest))
-		return (size + ft_strlen(src));
-	a = ft_strlen(dest);
-	b = 0;
-	while (src[b] != '\0' && a + 1 < size)
-	{
-		dest[a] = src[b];
-		a++;
-		b++;
-	}
-	dest[a] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[b]));
+	last = s;
+	i = ft_strlen(s);
+	s += i;
+	while (s != last && c != *s)
+		s--;
+	if ((unsigned char)c == (unsigned char)*s)
+		return ((char *)s);
+	return (0);
 }

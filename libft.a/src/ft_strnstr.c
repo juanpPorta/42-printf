@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 13:02:46 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/15 13:02:46 by marvin           ###   ########.fr       */
+/*   Created: 2021/09/15 15:27:55 by marvin            #+#    #+#             */
+/*   Updated: 2021/09/15 15:27:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	unsigned int	a;
-	unsigned int	b;
+	size_t  stack;
 
-	if (size <= ft_strlen(dest))
-		return (size + ft_strlen(src));
-	a = ft_strlen(dest);
-	b = 0;
-	while (src[b] != '\0' && a + 1 < size)
+	if (*to_find == '\0')
+		return ((char *)str);
+	stack = ft_strlen((char *)to_find);
+	while (*str != '\0' && len-- >= stack)
 	{
-		dest[a] = src[b];
-		a++;
-		b++;
+		if (*str == *to_find && ft_memcmp(str, to_find, stack) == 0)
+			return ((char *)str);
+		str++;
 	}
-	dest[a] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[b]));
+	return (NULL);
 }
