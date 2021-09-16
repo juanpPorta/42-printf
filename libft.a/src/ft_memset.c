@@ -6,16 +6,17 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:18:41 by jporta            #+#    #+#             */
-/*   Updated: 2021/09/13 15:31:42 by jporta           ###   ########.fr       */
+/*   Updated: 2021/09/16 11:50:23 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t n)
 {
 	size_t	a;
 
+	a = 0;
 	while (a < n)
 	{
 		((unsigned char *)str)[a] = c;

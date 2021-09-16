@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 13:02:46 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/15 13:02:46 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/16 14:56:59 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	a;
-	unsigned int	b;
+	size_t	a;
+	size_t	b;
 
 	if (size <= ft_strlen(dest))
 		return (size + ft_strlen(src));

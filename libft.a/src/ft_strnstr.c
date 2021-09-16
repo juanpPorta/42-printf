@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:27:55 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/15 15:27:55 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/16 14:59:12 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t  stack;
+	size_t	stack;
 
 	if (*to_find == '\0')
 		return ((char *)str);
