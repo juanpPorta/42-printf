@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 14:21:12 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/17 14:21:12 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/22 20:07:54 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int count_c(char const *str, char c)
+static int	count_c(char const *str, char c)
 {
-	size_t i;
-	int count;
+	size_t	i;
+	int		count;
 
 	count = 0;
 	i = 0;
@@ -45,31 +45,30 @@ static int	lengt(char const *s, char c, int aux)
 	return (len);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int 	index;
-	int 	i;
-	int 	aux;
-	char 	**split;
+	int		index;
+	int		i;
+	int		aux;
+	char	**split;
 
 	i = 0;
 	if (!s)
 		return (0);
 	split = ft_calloc(sizeof(char *), (count_c(s, c) + 1));
 	if (!split)
-		return (0);
-	index = - 1;
+		return (NULL);
+	index = -1;
 	aux = 0;
 	while (++index < count_c(s, c))
 	{
 		split[index] = malloc((sizeof(char) * lengt(s, c, aux)) + 1);
 		i = 0;
-		while (s[aux] == c || s[aux] != '\0')
+		while (s[aux] == c && s[aux] != '\0')
 			aux++;
 		while (s[aux] != c && s[aux] != '\0')
 			split[index][i++] = s[aux++];
 		split[index][i] = '\0';
 	}
 	return (split);
-
 }

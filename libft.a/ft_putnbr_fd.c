@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 15:58:32 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/17 15:58:32 by marvin           ###   ########.fr       */
+/*   Updated: 2021/09/22 18:40:59 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int resto;
+	unsigned int	resto;
 
 	if (n < 0)
 	{
-		ft_putchar('-', fd);
+		ft_putchar_fd('-', fd);
 		resto = (unsigned int)(n * -1);
 	}
 	else
