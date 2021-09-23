@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 12:49:54 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/16 16:56:05 by jporta           ###   ########.fr       */
+/*   Updated: 2021/09/23 14:36:59 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,18 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
 	unsigned int	indx;
 
-	i = 0;
 	indx = 0;
 	if (!dst || !src)
-		return (0);
-	while (src[i] != '\0')
-		i++;
-	if (size != 0)
+		return (ft_strlen(src));
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[indx] != '\0' && indx < (size - 1))
 	{
-		while (src[indx] != '\0' && indx < (size - 1))
-		{
-			dst[indx] = src[indx];
-			indx++;
-		}
-		dst[indx] = '\0';
+		dst[indx] = src[indx];
+		indx++;
 	}
-	return (i);
+	dst[indx] = '\0';
+	return (ft_strlen(src));
 }
