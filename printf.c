@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:14:07 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/02 17:19:03 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/02 18:36:52 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_printf(const char *str, ...)
 			ft_putchar(str[cont]);
 			cont++;
 		}
-		cont++;
 	}
 	va_end(ag);
 	return (0);
@@ -39,6 +38,6 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("%c%%", 'a');
+	ft_printf("%c%% string %s", 'a', "hola");
 	return (0);
 }

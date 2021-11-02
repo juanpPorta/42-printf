@@ -6,7 +6,7 @@
 #    By: jporta <jporta@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 15:38:27 by jporta            #+#    #+#              #
-#    Updated: 2021/11/02 17:40:10 by jporta           ###   ########.fr        #
+#    Updated: 2021/11/02 18:32:26 by jporta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ CC		= gcc
 NAME	= libftprintf.a
 CFLAGS	= -Wall -Wextra -Werror
 LIB1	= ar -rcs
-LIB2	= ranlib
 RM		= /bin/rm -f
 LIBFT	= ./libft/libft.a
 HEADER	= printf.h
@@ -27,9 +26,8 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@make all -C ./libft
-	$(LIB1) $(NAME) $(OBJS) $(LIBFT)
-	$(LIB2) $(NAME)
-	@chmod 700 libftprintf.a
+	cp ./libft/libft.a $(NAME)
+	$(LIB1) $(NAME) $(OBJS)
 			
 .c.o:
 			$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $(<:.c=.o)

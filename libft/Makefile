@@ -6,14 +6,13 @@
 #    By: jporta <jporta@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 11:45:57 by jporta            #+#    #+#              #
-#    Updated: 2021/11/02 16:49:26 by jporta           ###   ########.fr        #
+#    Updated: 2021/11/02 18:32:21 by jporta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 LIB1	= ar -rcs
-LIB2	= ranlib
 RM		= /bin/rm -f
 
 NAME	= libft.a
@@ -40,11 +39,9 @@ all:		$(NAME) bonus
 
 $(NAME):	$(OBJS) $(INCLUDE)
 			$(LIB1) $(NAME) $(OBJS)
-			$(LIB2) $(NAME)
 
 bonus:		$(NAME) $(BONUS_O)
 			$(LIB1) $(NAME) $(BONUS_O)
-			$(LIB2) $(NAME)
 			
 .c.o:
 			$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $(<:.c=.o)
