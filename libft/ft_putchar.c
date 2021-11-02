@@ -1,44 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 16:14:07 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/02 17:19:03 by jporta           ###   ########.fr       */
+/*   Created: 2021/11/02 14:59:03 by jporta            #+#    #+#             */
+/*   Updated: 2021/11/02 15:03:02 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *str, ...)
+void	ft_putchar(char c)
 {
-	va_list	ag;
-	int		cont;
-
-	cont = 0;
-	va_start(ag, str);
-	while (str[cont])
-	{
-		if (str[cont] == '%')
-		{
-			vprint(str[cont + 1], ag);
-			cont++;
-		}
-		else
-		{
-			ft_putchar(str[cont]);
-			cont++;
-		}
-		cont++;
-	}
-	va_end(ag);
-	return (0);
-}
-
-int	main(void)
-{
-	ft_printf("%c%%", 'a');
-	return (0);
+	write (1, &c, 1);
 }

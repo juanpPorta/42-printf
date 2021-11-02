@@ -6,7 +6,7 @@
 #    By: jporta <jporta@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/16 11:45:57 by jporta            #+#    #+#              #
-#    Updated: 2021/09/16 16:45:15 by jporta           ###   ########.fr        #
+#    Updated: 2021/11/02 16:49:26 by jporta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 			ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 			ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c\
 			ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c\
-			ft_putendl_fd.c ft_strmapi.c ft_striteri.c ft_itoa.c ft_split.c
+			ft_putendl_fd.c ft_strmapi.c ft_striteri.c ft_itoa.c ft_split.c\
+			ft_putnbr.c ft_putchar.c ft_putstr.c
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -35,7 +36,7 @@ BONUS_S = 	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
 
 BONUS_O = $(BONUS_S:.c=.o)
 
-all:		$(NAME)
+all:		$(NAME) bonus
 
 $(NAME):	$(OBJS) $(INCLUDE)
 			$(LIB1) $(NAME) $(OBJS)
@@ -46,7 +47,7 @@ bonus:		$(NAME) $(BONUS_O)
 			$(LIB2) $(NAME)
 			
 .c.o:
-			$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
+			$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $(<:.c=.o)
 			
 clean:
 			$(RM) $(OBJS) $(BONUS_O)

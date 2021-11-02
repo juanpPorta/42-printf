@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 16:14:07 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/02 17:19:03 by jporta           ###   ########.fr       */
+/*   Created: 2021/11/02 15:00:37 by jporta            #+#    #+#             */
+/*   Updated: 2021/11/02 15:03:13 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *str, ...)
+void	ft_putnbr(int n)
 {
-	va_list	ag;
-	int		cont;
+	unsigned int	resto;
 
-	cont = 0;
-	va_start(ag, str);
-	while (str[cont])
+	if (n < 0)
 	{
-		if (str[cont] == '%')
-		{
-			vprint(str[cont + 1], ag);
-			cont++;
-		}
-		else
-		{
-			ft_putchar(str[cont]);
-			cont++;
-		}
-		cont++;
+		ft_putchar('-');
+		resto = (unsigned int)(n * -1);
 	}
-	va_end(ag);
-	return (0);
-}
-
-int	main(void)
-{
-	ft_printf("%c%%", 'a');
-	return (0);
+	else
+		resto = (unsigned int)n;
+	if (resto >= 10)
+		ft_putnbr(resto / 10);
+	ft_putchar((char)(resto % 10 + 48));
 }

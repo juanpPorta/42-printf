@@ -6,7 +6,7 @@
 #    By: jporta <jporta@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 15:38:27 by jporta            #+#    #+#              #
-#    Updated: 2021/10/27 16:38:22 by jporta           ###   ########.fr        #
+#    Updated: 2021/11/02 17:40:10 by jporta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,23 +22,24 @@ SRCS	= printf.c \
 			printf_utils.c 
 OBJS	= $(SRCS:.c=.o)
 
-all:	make_libft $(NAME)
+all:	$(NAME)
 
-make_libft:
-	@make all -C ./libft
 
 $(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@make all -C ./libft
+	$(LIB1) $(NAME) $(OBJS) $(LIBFT)
+	$(LIB2) $(NAME)
+	@chmod 700 libftprintf.a
 			
-%.o: %.c $(HEADER) $(LIBFT) 
-	$(CC) $(CFLAGS) $< -c
+.c.o:
+			$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $(<:.c=.o)
 			
 clean:		
 	rm -rf $(OBJS)
 	@make clean -C ./libft
 	
 fclean:		clean
-			rm -rf $(NAME)
+			rm -rf $(NAME) a.out
 			@make fclean -C ./libft
 
 re:			fclean all
