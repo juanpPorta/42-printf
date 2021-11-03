@@ -6,11 +6,12 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:14:07 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/03 18:07:23 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/03 19:29:58 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include "limits.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -25,7 +26,10 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[cont] == '%')
 		{
-			res += vprint(str[cont + 1], ag);
+			if (str[cont + 1] == '%')
+				res += write(1, "%%", 1);
+			else
+				res += vprint(str[cont + 1], ag);
 			cont++;
 		}
 		else
@@ -46,8 +50,8 @@ int	ft_printf(const char *str, ...)
 
 
 	hola = malloc(sizeof(char *) * 2);
-	x =	ft_printf("%p\n",(void *)16);
-	a = printf("%p\n",(void *) 16);
+	x =	ft_printf("%p\n%p\n ", LONG_MIN, LONG_MAX);
+	a = printf("\n%p\n%p\n", LONG_MIN, LONG_MAX);
 	printf("primero %d\n segundo %d\n", x, a);
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:16:45 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/03 18:10:09 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/03 19:15:39 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_lentbase(char *base)
 	return (a);
 }
 
-int	ft_putnbr_base(unsigned long long nbr, char *base)
+int	ft_putnbr_base(long long nbr, char *base)
 {
 	unsigned long long	lenbase;
 	unsigned long long	nbr_unsigned;
@@ -61,10 +61,10 @@ int	ft_putnbr_base(unsigned long long nbr, char *base)
 		cont = 0;
 	if (check_error(base))
 	{
-		if (nbr < 0)
+		if (nbr < 0 && ft_strlen(base) == 10)
 		{
-			write(1, "-", 1);
-			nbr_unsigned = (unsigned long long)(-1 * nbr);
+			cont += write(1, "-", 1);
+			nbr_unsigned = (long long)(-1 * nbr);
 		}
 		else
 			nbr_unsigned = nbr;

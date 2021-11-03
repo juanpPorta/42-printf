@@ -6,7 +6,7 @@
 #    By: jporta <jporta@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 15:38:27 by jporta            #+#    #+#              #
-#    Updated: 2021/11/03 17:21:22 by jporta           ###   ########.fr        #
+#    Updated: 2021/11/03 19:02:27 by jporta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ $(NAME):	$(OBJS)
 	$(LIB1) $(NAME) $(OBJS)
 			
 .c.o:
-			$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $(<:.c=.o)
+			$(CC)  -I $(HEADER) -c $< -o $(<:.c=.o)
 			
 clean:		
 	rm -rf $(OBJS)
