@@ -6,23 +6,30 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:07:44 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/02 18:21:18 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/03 18:15:13 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libftprintf.h"
 
-void	vprint(const char s, va_list ag)
+int	vprint(const char s, va_list ag)
 {
-	char	c;
+	int		res;
 
+	res = 0;
 	if (s == '%')
-		write(1, "%%", 1);
+		res += write(1, "%%", 1);
 	if (s == 'c')
-	{
-		c = va_arg(ag, int);
-		ft_putchar(c);
-	}
+		res += ft_putchar(va_arg(ag, int));
 	if (s == 's')
-		ft_putstr(va_arg(ag, char *));
+		res += ft_putstr(va_arg(ag, char *));
+	if (s == 'p')
+	{
+		res += write(1, "0x", 2);
+		res += ft_putnbr_base(va_arg(ag, unsigned long long),
+				"0123456789abcdef");
+	}
+	if (s == 'd')
+		res += ft_putnbr_base(va_arg(ag, unsigned long long), "0123456789");
+	return (res);
 }

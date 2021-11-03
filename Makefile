@@ -6,7 +6,7 @@
 #    By: jporta <jporta@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 15:38:27 by jporta            #+#    #+#              #
-#    Updated: 2021/11/02 18:32:26 by jporta           ###   ########.fr        #
+#    Updated: 2021/11/03 17:21:22 by jporta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS	= -Wall -Wextra -Werror
 LIB1	= ar -rcs
 RM		= /bin/rm -f
 LIBFT	= ./libft/libft.a
-HEADER	= printf.h
+HEADER	= libftprintf.h
 SRCS	= printf.c \
 			printf_utils.c 
 OBJS	= $(SRCS:.c=.o)
