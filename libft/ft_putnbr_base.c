@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:16:45 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/03 19:15:39 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/03 20:44:36 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_putnbr_base(long long nbr, char *base)
 		}
 		else
 			nbr_unsigned = nbr;
-		lenbase = ft_lentbase(base);
+		lenbase = ft_strlen(base);
 		if (nbr_unsigned >= lenbase)
 		{
 			ft_putnbr_base(nbr_unsigned / lenbase, base);

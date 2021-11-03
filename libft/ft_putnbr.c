@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:00:37 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/03 18:31:15 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/03 20:33:37 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ int	ft_putnbr(long nb)
 	int			temporal;
 	int			divisor;
 	int			final;
-	static int	contador;
+	static int	cont;
 
 	divisor = 1;
 	final = 48;
 	if (nb == -2147483648)
 	{
-		write(1, "-", 1);
-		write(1, "2", 1);
+		cont += write(1, "-", 1);
+		cont += write(1, "2", 1);
 		nb = 147483648;
 	}
 	if (nb < 0)
 	{
 		nb = nb * -1;
-		write(1, "-", 1);
+		cont += write(1, "-", 1);
 	}
 	temporal = nb;
 	while (temporal / 10 != 0)
@@ -56,6 +56,6 @@ int	ft_putnbr(long nb)
 		temporal = temporal / 10;
 		divisor = divisor * 10;
 	}
-	contador += ft_putcharfinal(final, nb, divisor);
-	return (contador);
+	cont += ft_putcharfinal(final, nb, divisor);
+	return (cont);
 }

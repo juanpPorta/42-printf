@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:14:28 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/03 17:37:37 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/03 21:02:54 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 # include "libft/libft.h"
 
 int		vprint(const char s, va_list ag);
+int		ft_hexade(unsigned long long n);
 int		ft_printf(const char *str, ...);
 #endif

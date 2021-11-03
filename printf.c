@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:14:07 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/03 19:29:58 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/03 20:51:34 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,9 @@ int	ft_printf(const char *str, ...)
 	int		x = 0;
 	int		a = 0;
 
-
 	hola = malloc(sizeof(char *) * 2);
-	x =	ft_printf("%p\n%p\n ", LONG_MIN, LONG_MAX);
-	a = printf("\n%p\n%p\n", LONG_MIN, LONG_MAX);
-	printf("primero %d\n segundo %d\n", x, a);
+	x =	ft_printf (" %p %p ", LONG_MIN, LONG_MAX);
+	a = printf (" %p %p ", LONG_MIN, LONG_MAX);
+	printf("primero %d\nsegundo %d\n", x, a);
 	return (0);
 } */
