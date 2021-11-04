@@ -1,21 +1,6 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: jporta <jporta@student.42.fr>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/03 20:20:59 by jporta            #+#    #+#              #
-#    Updated: 2021/11/03 20:21:00 by jporta           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-
 CC		= gcc
 NAME	= libftprintf.a
-CFLAGS	= -Wall -Wextra -Werror
 LIB1	= ar -rcs
-RM		= /bin/rm -f
 LIBFT	= ./libft/libft.a
 HEADER	= libftprintf.h
 SRCS	= printf.c \

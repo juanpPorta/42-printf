@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 13:58:58 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/03 18:45:10 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/04 16:07:37 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 int				ft_putchar(char c);
-int				ft_putnbr(long n);
+void			ft_putnbr(long n);
 int				ft_putstr(char *str);
 int				ft_putnbr_base(long long nbr, char *base);
-int				ft_putcharfinal(int final, int nb, int divisor);
+void			ft_putcharfinal(int final, int nb, int divisor);
 /**/
 /** lst bonus**/
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
