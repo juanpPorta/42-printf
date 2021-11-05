@@ -6,12 +6,11 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 16:14:07 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/04 15:57:11 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/05 16:49:01 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include "limits.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {

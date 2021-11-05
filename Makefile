@@ -2,7 +2,7 @@ CC		= gcc
 NAME	= libftprintf.a
 LIB1	= ar -rcs
 LIBFT	= ./libft/libft.a
-HEADER	= libftprintf.h
+HEADER	= ft_printf.h
 SRCS	= printf.c \
 			printf_utils.c 
 OBJS	= $(SRCS:.c=.o)
