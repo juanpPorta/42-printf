@@ -1,17 +1,14 @@
 # 42-printf
 
-
 #include <limits.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
-
 int ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return(1);
 }
-
 int is_string(char *s)
 {
 	int i = 0;
@@ -22,7 +19,6 @@ int is_string(char *s)
 		ft_putchar(s[i++]);
 	return(i);
 }	
-
 int hex_num(unsigned int num, int base)
 {
 	int count = 0, i;
@@ -38,7 +34,6 @@ int hex_num(unsigned int num, int base)
 		count += write(1, &dec[i], 1);
 	return(count);
 }
-
 int ConvPush_num(int num)
 {
 	int count = 0;
@@ -51,7 +46,6 @@ int ConvPush_num(int num)
 	count += hex_num(num, 10);
 	return (count);
 }
-
 int ft_printf(const char *format, ...)
 {
 	int	i = 0, count = 0;
@@ -79,7 +73,6 @@ int ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
 int main()
 {
 	int num = -90;
